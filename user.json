@@ -1,0 +1,27 @@
+[
+    {
+      "name": "John Doe",
+      "mobile": "1234567890",
+      "username": "johndoe",
+      "email": "johndoe@example.com",
+      "password": "password123"
+    },
+    {
+      "name": "Jane Smith",
+      "mobile": "9876543210",
+      "username": "janesmith",
+      "email": "janesmith@example.com",
+      "password": "qwertyuiop"
+    },
+  
+    {
+        "name": "demo",
+        "mobile": "9876543210",
+        "username": "demo",
+        "email": "janesmith@example.com",
+        "password": "demo"
+
+
+    }
+
+]

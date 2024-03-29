@@ -1,0 +1,86 @@
+{
+    "items": [
+      {
+        "sys": { "id": "1" },
+        "fields": {
+          "title": "Canon EOS Rebel T7 DSLR Camera",
+          "price": 499.99,
+          "image": { "fields": { "file": { "url": "images/image1.jpg" } } }
+        }
+      },
+      {
+        "sys": { "id": "2" },
+        "fields": {
+          "title": "Nikon D3500 DSLR Camera",
+          "price": 449.95,
+          "image": { "fields": { "file": { "url": "images/image2.jpg" } } }
+        }
+      },
+      {
+        "sys": { "id": "3" },
+        "fields": {
+          "title": "Sony Alpha a6000 Mirrorless Camera",
+          "price": 648.00,
+          "image": { "fields": { "file": { "url": "images/image3.jpg" } } }
+        }
+      },
+      {
+        "sys": { "id": "4" },
+        "fields": {
+          "title": "Fujifilm X-T4 Mirrorless Camera",
+          "price": 1699.00,
+          "image": { "fields": { "file": { "url": "images/image4.jpg" } } }
+        }
+      },
+      {
+        "sys": { "id": "5" },
+        "fields": {
+          "title": "Panasonic Lumix G7 Mirrorless Camera",
+          "price": 497.99,
+          "image": { "fields": { "file": { "url": "images/iamge5.jpg" } } }
+        }
+      },
+      {
+        "sys": { "id": "6" },
+        "fields": {
+          "title": "Canon PowerShot G7 X Mark III",
+          "price": 749.00,
+          "image": { "fields": { "file": { "url": "images/image6.jpg" } } }
+        }
+      },
+      {
+        "sys": { "id": "7" },
+        "fields": {
+          "title": "Sony Cyber-shot DSC-RX100 VII",
+          "price": 1198.00,
+          "image": { "fields": { "file": { "url": "images/image7.jpg" } } }
+        }
+      },
+      {
+        "sys": { "id": "8" },
+        "fields": {
+          "title": "Nikon COOLPIX P1000",
+          "price": 999.95,
+          "image": { "fields": { "file": { "url": "images/image8.jpg" } } }
+        }
+      },
+      {
+        "sys": { "id": "9" },
+        "fields": {
+          "title": "GoPro HERO9 Black",
+          "price": 449.99,
+          "image": { "fields": { "file": { "url": "images/image9.jpg" } } }
+        }
+      },
+      {
+        "sys": { "id": "10" },
+        "fields": {
+          "title": "DJI Mavic Air 2",
+          "price": 799.00,
+          "image": { "fields": { "file": { "url": "images/image10.jpg" } } }
+        }
+      }
+      ]
+    }
+    
+  
