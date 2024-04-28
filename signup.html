@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <title>Sign Up Form Validation</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Quantico&family=Roboto&family=Varela+Round&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
 </head>
 <style>
     body {
@@ -38,7 +41,7 @@
     }
 
     input {
-        width: 100%;
+        width: 92%;
         padding: 10px;
         margin-bottom: 20px;
         border: 1px solid #ccc;
@@ -74,33 +77,47 @@
         text-align: center;
     }
 
-    .prompt {
-        text-align: center;
-        margin-top: 20px;
-        color: #2b2a2a;
-    }
+    
 
-    .prompt a {
+     a {
         color: #0e0d0d;
         text-decoration: none;
         font-weight: bold;
         transition: color 0.3s ease;
     }
 
-    .prompt a:hover {
-        color: #6d6b6b;
+    a:hover {
+        color: #ebe3e3;
+    }
+    .close-cart {
+        font-size: 1.7rem;
+        cursor: pointer;
+      }
+    #homeBtn{
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        cursor: pointer;
+        font-size: 24px;
+        color: #000;
+        text-decoration: none;
     }
 </style>
 <body>
 <div>
+    <a href="index.html">
+        <span class="close-cart">
+        
+            <i class="fas fa-arrow-left" id="homeBtn">HOME</i>
+        </span>
+    </a>
     <h2>Sign Up</h2>
     
-    <form id="signupForm">
-
+    <form id="signupForm" action="/signup" method="POST"> <!-- Update form action and method -->
         <label for="Name">Name:</label>
         <input type="text" id="name" name="name" required>
         <label for="number">Mobile:</label>
-        <input type="number" name="mno" id="mno" required>
+        <input type="number" name="mobileNumber" id="mobileNumber" required> <!-- Update input name -->
         <label for="username">Username:</label>
         <input type="text" id="username" name="username" required><br>
         <label for="email">Email:</label>
@@ -108,14 +125,10 @@
         <label for="password">Password:</label>
         <input type="password" id="password" name="password" required><br>
         <button type="submit">Sign Up</button>
+        
         <p id="error_message" style="color:red;"></p>
+        <p id="error1_message" style="color:rgb(4, 144, 35);"></p>
     </form>
-
-    <!-- Centered button container -->
-    <div class="prompt">
-        <p></p>
-        <a href="index.html">Home</a>
-    </div>
 </div>
 <script>
     $(document).ready(function() {
@@ -124,7 +137,7 @@
             var username = $('#username').val();
             var email = $('#email').val();
             var password = $('#password').val();
-            var mno = $('#mno').val();
+            var mobileNumber = $('#mobileNumber').val(); // Get mobile number value
             var errorMessage = '';
             if(username.length < 5) {
                 errorMessage += 'Username must be at least 5 characters long.\n';
@@ -135,7 +148,7 @@
             if(password.length < 6) {
                 errorMessage += 'Password must be at least 6 characters long.';
             }
-            if(mno.length < 10) {
+            if(mobileNumber.length < 10) {
                 errorMessage += 'Enter a valid mobile number';
             }
             if(errorMessage) {
@@ -144,25 +157,30 @@
                 // Construct JSON object for new user
                 var newUser = {
                     name: $('#name').val(),
-                    mobile: $('#mno').val(),
+                    mobileNumber: $('#mobileNumber').val(),
                     username: $('#username').val(),
                     email: $('#email').val(),
                     password: $('#password').val()
                 };
 
                 $.ajax({
-                    url: 'user.json',
+                    url: '/signup',
                     type: 'POST',
                     contentType: 'application/json',
                     data: JSON.stringify(newUser),
                     success: function(response) {
-                        alert('User data stored successfully');
-                        $('#signupForm')[0].reset(); // Reset form fields
+                        // Display success message
+                        $('#error1_message').text('Sign up successful! Redirecting to home page...');
+                        // Redirect to home page after a short delay (e.g., 2 seconds)
+                        setTimeout(function() {
+                            window.location.href = '/'; // Redirect to home page
+                        }, 2000); // 2000 milliseconds = 2 seconds
                     },
                     error: function(xhr, status, error) {
                         $('#error_message').text('Error storing user data: ' + error);
                     }
                 });
+                
             }
         });
     });

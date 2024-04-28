@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout Page</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- FontAwesome -->
+    <style>
+       
+        .cart-footer {
+            display: flex;
+            justify-content: center; 
+            align-items: center; 
+            margin-top: 20px; 
+            padding: 20px; 
+            background-color: #c0bbbb; 
+            position: relative; 
+        }
+
+        .checkout-form {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            flex-basis: 50%; 
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form-group textarea {
+            height: 100px; 
+        }
+
+        .billing {
+            padding-right: 20px; 
+            position: relative; 
+        }
+
+        .billing::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 100%;
+            width: 10px;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.1); 
+        }
+
+        .shipping {
+            padding-left: 20px; 
+            position: relative; 
+        }
+
+        .shipping::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 100%;
+            width: 10px;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.1); 
+        }
+        .center-button {
+            text-align: center; 
+            margin-top: 20px; 
+        }
+        @media (max-width: 768px) {
+            .form-group {
+                flex-basis: 100%; 
+            }
+        }
+
+        .order-placed {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        
+        .order-placed.active {
+            display: block;
+        }
+
+        .cart.active{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="cart" id="cart">
+        <span class="close-cart">
+            <i class="fas fa-arrow-left"></i>
+        </span> 
+        <h2>CHECKOUT PAGE</h2>
+        <div class="cart-content">
+            <!-- Cart items will be displayed here -->
+        </div>
+        <h3 align="center">Your Total: <span class="cart-total">0</span></h3>
+        <div class="cart-footer">
+            
+            <form class="checkout-form">
+                <div class="form-group billing">
+                    <h3>Billing Information</h3>
+                    <label for="card-number">Card Number:</label>
+                    <input type="text" id="card-number" name="card-number" class="form-control" required>
+                    <label for="expiry-date">Expiry Date:</label>
+                    <input type="text" id="expiry-date" name="expiry-date" class="form-control" placeholder="MM/YY" required>
+                    <label for="cvv">CVV:</label>
+                    <input type="text" id="cvv" name="cvv" class="form-control" required>
+                </div>
+                <div class="form-group shipping">
+                    <h3>Shipping Address</h3>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" class="form-control" required>
+                    <label for="address">Address:</label>
+                    <textarea id="address" name="address" class="form-control" required></textarea>
+                    <label for="city">City:</label>
+                    <input type="text" id="city" name="city" class="form-control" required>
+                    <label for="zip">ZIP Code:</label>
+                    <input type="text" id="zip" name="zip" class="form-control" required>
+                </div>
+                <div class="center-button">
+                    <button type="submit" class="buy-cart banner-btn " onclick="placeOrder()">Place Order</button>
+                </div>
+                
+            </form>
+
+            
+        </div>
+        
+
+        <div class="order-placed" id="orderPlaced">
+            <i class="fas fa-check-circle"></i> <strong>Order Placed!</strong> Your order has been successfully placed.
+        </div>
+        
+    </div>
+
+    <script>
+        function placeOrder() {
+            
+            document.querySelector('.cart-content').style.display = 'none';
+            document.querySelector('.cart-footer').style.display = 'none';
+            document.querySelector('.center-button').style.display='none';
+
+            var message = document.getElementById('orderPlaced');
+            message.classList.add('active');
+            var cart=document.getElementById('cart');
+            message.classList.add('active');
+
+
+            // Redirect to home page after 2 seconds
+            setTimeout(function() {
+                message.classList.remove('active');
+                window.location.href = "index.html";
+            }, 2000);
+        }
+    </script>
+</body>
+<script src="app1.js"></script>
+</html>

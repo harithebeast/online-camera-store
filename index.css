@@ -152,7 +152,7 @@ body {
   margin: 0 auto;
   max-width: 1170px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(4, minmax(260px, 1fr));
   grid-column-gap: 1.5rem;
   grid-row-gap: 2rem;
 }
@@ -248,11 +248,11 @@ body {
   position: absolute;
   bottom: 0;
   right: 0;
-  background: #4a4a4a; /* Change to your desired color */
+  background: #4a4a4a; 
   border: none;
   text-transform: uppercase;
   padding: 0.5rem 1rem;
-  letter-spacing: 0.1rem; /* Adjust letter spacing as needed */
+  letter-spacing: 0.1rem; 
   color: #ffffff;
   border-radius: 0 0 0.5rem 0;
   transition: all 0.3s ease;
@@ -307,7 +307,7 @@ body {
   background: rgb(231, 226, 221);
   padding: 1.5rem;
   transition: var(--mainTransition);
-  transform: translateX(100%);
+  transform: translateX(0%);
 }
 .showCart {
   transform: translateX(0);
@@ -317,7 +317,7 @@ body {
 }
 @media screen and (min-width: 768px) {
   .cart {
-    width: 30vw;
+    width: 100vw;
     min-width: 450px;
   }
 }

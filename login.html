@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Quantico&family=Roboto&family=Varela+Round&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
     <title>Login Page</title>
     <style>
         body {
@@ -82,37 +86,106 @@
             font-weight: bold;
             transition: color 0.3s ease;
         }
+        a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        a:hover {
+            color: #adb5bd;
+        }
 
         .prompt a:hover {
             color: #adb5bd;
         }
+
+        
+        .close-cart {
+            font-size: 1.7rem;
+            cursor: pointer;
+          }
+        #homeBtn{
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            cursor: pointer;
+            font-size: 24px;
+            color: #000;
+            text-decoration: none;
+        }
+        #error_message {
+            color: red;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+        
     </style>
 </head>
 <body>
+    <a href="index.html">
+    <span class="close-cart">
+    
+        <i class="fas fa-arrow-left" id="homeBtn">HOME</i>
+    </span>
+</a>
+     
     <div class="login">
+       
         <h2>Login</h2>
-        <form id="loginForm">
+        <form id="loginForm" method="POST" action="/login">
             <label for="username">Username</label>
             <input type="text" id="username" name="username" placeholder="Enter your username" required>
             <label for="password">Password</label>
             <input type="password" id="password" name="password" placeholder="Enter your password" required>
             <button type="submit">Login</button>
+            <p id="error_message"></p>
+            
         </form>
         <div class="prompt">Don't have an account? <a href="signup.html">Sign up</a></div>
     </div>
-    <script>
-        document.getElementById('loginForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
-            // Simulate successful login for demonstration purposes
-            if (username === 'demo' && password === 'demo') {
-                // Redirect to the checkout page upon successful login
-                window.location.href = 'index.html';
-            } else {
-                alert('Incorrect username or password. Please try again.');
-            }
-        });
-    </script>
 </body>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const loginForm = document.getElementById("loginForm");
+        const errorMessage = document.getElementById("error_message");
+    
+        loginForm.addEventListener("submit", (event) => {
+            event.preventDefault(); // Prevent default form submission behavior
+    
+            const formData = new FormData(loginForm);
+            const username = formData.get("username");
+            const password = formData.get("password");
+    
+            // Create a new XMLHttpRequest object
+            const xhr = new XMLHttpRequest();
+    
+            // Configure the AJAX request
+            xhr.open("POST", "/login");
+            xhr.setRequestHeader("Content-Type", "application/json");
+    
+            // Define the callback function for when the request completes
+            xhr.onload = function () {
+                if (xhr.status === 200) {
+                    // If login is successful, redirect to index.html
+                    window.location.href = "/index.html";
+                } else {
+                    // If login fails, display error message
+                    const responseData = JSON.parse(xhr.responseText);
+                    errorMessage.textContent = responseData.message;
+                }
+            };
+    
+            // Define the callback function for handling errors
+            xhr.onerror = function () {
+                console.error("An error occurred while making the request.");
+                errorMessage.textContent = "An error occurred. Please try again later.";
+            };
+    
+            // Send the AJAX request with the JSON data
+            xhr.send(JSON.stringify({ username, password }));
+        });
+    });
+    
+</script>
 </html>

@@ -5,15 +5,15 @@
         "fields": {
           "title": "Canon EOS Rebel T7 DSLR Camera",
           "price": 499.99,
-          "image": { "fields": { "file": { "url": "images/image1.jpg" } } }
+          "image": { "fields": { "file": { "url": "https://m.media-amazon.com/images/I/71Is-Zv6A0L._AC_SX679_.jpg" } } }
         }
       },
       {
-        "sys": { "id": "2" },
+        "sys": { "id": "2" },  
         "fields": {
           "title": "Nikon D3500 DSLR Camera",
           "price": 449.95,
-          "image": { "fields": { "file": { "url": "images/image2.jpg" } } }
+          "image": { "fields": { "file": { "url": "https://m.media-amazon.com/images/I/71D8Mh7VWoL._AC_SX679_.jpg" } } }
         }
       },
       {
@@ -21,7 +21,7 @@
         "fields": {
           "title": "Sony Alpha a6000 Mirrorless Camera",
           "price": 648.00,
-          "image": { "fields": { "file": { "url": "images/image3.jpg" } } }
+          "image": { "fields": { "file": { "url": "https://m.media-amazon.com/images/I/61kHENeCK8L._AC_SX425_.jpg" } } }
         }
       },
       {
@@ -29,7 +29,7 @@
         "fields": {
           "title": "Fujifilm X-T4 Mirrorless Camera",
           "price": 1699.00,
-          "image": { "fields": { "file": { "url": "images/image4.jpg" } } }
+          "image": { "fields": { "file": { "url": "https://m.media-amazon.com/images/I/71GhZUWuLLL._AC_SX425_.jpg" } } }
         }
       },
       {
@@ -37,7 +37,7 @@
         "fields": {
           "title": "Panasonic Lumix G7 Mirrorless Camera",
           "price": 497.99,
-          "image": { "fields": { "file": { "url": "images/iamge5.jpg" } } }
+          "image": { "fields": { "file": { "url": "https://m.media-amazon.com/images/I/611l2ooQReL._AC_SX425_.jpg" } } }
         }
       },
       {
@@ -45,7 +45,7 @@
         "fields": {
           "title": "Canon PowerShot G7 X Mark III",
           "price": 749.00,
-          "image": { "fields": { "file": { "url": "images/image6.jpg" } } }
+          "image": { "fields": { "file": { "url": "https://m.media-amazon.com/images/I/71o3WKd2-xL._AC_SX425_.jpg" } } }
         }
       },
       {
@@ -53,7 +53,7 @@
         "fields": {
           "title": "Sony Cyber-shot DSC-RX100 VII",
           "price": 1198.00,
-          "image": { "fields": { "file": { "url": "images/image7.jpg" } } }
+          "image": { "fields": { "file": { "url": "https://m.media-amazon.com/images/I/71bkvE-5dAL._AC_SX425_.jpg" } } }
         }
       },
       {
@@ -61,7 +61,7 @@
         "fields": {
           "title": "Nikon COOLPIX P1000",
           "price": 999.95,
-          "image": { "fields": { "file": { "url": "images/image8.jpg" } } }
+          "image": { "fields": { "file": { "url": "https://m.media-amazon.com/images/I/71s89wc2L5L._AC_SX425_.jpg" } } }
         }
       },
       {
@@ -69,7 +69,7 @@
         "fields": {
           "title": "GoPro HERO9 Black",
           "price": 449.99,
-          "image": { "fields": { "file": { "url": "images/image9.jpg" } } }
+          "image": { "fields": { "file": { "url": "https://m.media-amazon.com/images/I/518PGIaxCPL._AC_SX425_.jpg" } } }
         }
       },
       {
@@ -77,7 +77,7 @@
         "fields": {
           "title": "DJI Mavic Air 2",
           "price": 799.00,
-          "image": { "fields": { "file": { "url": "images/image10.jpg" } } }
+          "image": { "fields": { "file": { "url": "https://m.media-amazon.com/images/I/51yRrK6fBdL._AC_SX425_.jpg " } } }
         }
       }
       ]
